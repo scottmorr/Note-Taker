@@ -1,16 +1,21 @@
 const express = require("express");
-const apiroutes = require("./routes/apiroutes");
-const htmlroutes = require("./routes/htmlroutes");
+
 
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static("Public"));
-app.use('/api', apiRoutes);
-app.use('/', htmlroutes)
 
-//start server
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+app.use(express.json()); // support json encoded bodies
+app.use(express.urlencoded({ extended: true })); 
+app.use(express.static("public"));
+app.use("/api", require("./routes/apiroutes"));
+app.use("/", require("./routes/htmlroutes"));
+
+app.listen(PORT, ()=> console.log(`listening on PORT ${PORT}`))
+
+ 
+
+
+
+

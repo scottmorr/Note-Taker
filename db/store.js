@@ -1,9 +1,10 @@
 const fs = require("fs");
-const utils = require("utils")
-const uuidv1 = require("uuid/v1");
+const util = require("util")
 
-const readFileAsync = utils.promisify(fs.readFile);
-const writeFileAsync = utils.promisify(fs.writeFile);
+const { v1:uuidv1 } = require("uuid");
+
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 
 class Store {
     read() {
@@ -28,6 +29,14 @@ class Store {
         const { title, text } = note;
 
         //if statement to check if  empty
+        if(!title || !text){
+            throw new Error("Note cannot be blank")
+        }
+
+
+
+                          // return emptyNotes;
+
         const newNote = { title, text, id: uuidv1() };
 
         return this.getNotes()
