@@ -1,32 +1,30 @@
 const router = require("express").Router();
-const store = require("../db/store");
+// const Store = require("../db/store");
+// const store = new Store()
 
-console.log("apiroutes");
-
-
-router.get("/notes", function (req, res) {
-    store
-        .getNotes()
-        .then(notes => res.json(notes))
-        .catch(err => res.status(500).json(err))
+router.get("/api/notes", function (req, res) {
+    // console.log('here')
+    // store
+    //     .read()
+    //     .then(data => console.log(data))
 });
 
 router.post("/notes", (req, res) => {
-    store 
-    .addNotes(req.body)
-   .then((note)=>res.json(note))
-   .catch(err => res.status(500).json(err))
-   
+    // store
+    //     .addNotes(req.body)
+    //     .then((note) => res.json(note))
+    //     .catch(err => res.status(500).json(err))
+
 });
 
 
 router.delete("/api/notes/:id", (req, res) => {
-    store
-    .removeNote(req.params.id)
-    .then(()=>res.json({ok:true}))
-    .catch(err => res.status(500).json(err))
-        
-      
+    // store
+    //     .removeNote(req.params.id)
+    //     .then(() => res.json({ ok: true }))
+    //     .catch(err => res.status(500).json(err))
+
+
 });
 
 
