@@ -1,18 +1,3 @@
-// var fs = require("fs");
-// var html = require("./node_modules/html");
-
-
-
-// const notes = require("./lib/Manager");
-// const index = require("./lib/Intern");
-
-//
-
-
-// const OUTPUT_DIR = path.resolve(__dirname, "output");
-// const outputPath = path.join(OUTPUT_DIR, "notes.html")
-
-
 // supplied code
 var $noteTitle = $(".note-title");
 var $noteText = $(".note-textarea");

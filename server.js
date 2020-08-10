@@ -8,7 +8,7 @@ app.use(express.json()); // support json encoded bodies
 app.use(express.static("public"));
 
 
-app.use(require("./routes/apiroutes"));
+app.use('/api', require("./routes/apiroutes"));
 app.use(require("./routes/htmlroutes"));
 
 app.listen(PORT, ()=> console.log(`listening on PORT ${PORT}`))
